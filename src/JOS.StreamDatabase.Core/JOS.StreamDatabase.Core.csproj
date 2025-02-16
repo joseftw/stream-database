@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="JOS.Enumeration" />
+    <PackageReference Include="JOS.Enumeration.SourceGenerator" />
+    <PackageReference Include="JOS.Result" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B339848B-240C-4C33-A3E3-5A0240BA8117}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C352DFAF-A981-4236-BE25-0A21021509D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{057530E4-C431-40C2-B2F9-6238B3A2B7DD}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		JOS.StreamDatabase.sln = JOS.StreamDatabase.sln
+		nuget.config = nuget.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JOS.StreamDatabase.Core", "src\JOS.StreamDatabase.Core\JOS.StreamDatabase.Core.csproj", "{5FF02EFA-5A76-4235-BC6E-2F0E4279E5E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JOS.StreamDatabase.Database", "src\JOS.StreamDatabase.Database\JOS.StreamDatabase.Database.csproj", "{707E871A-94D7-4A89-B977-19F0EDF30069}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JOS.StreamDatabase.Migrator", "src\JOS.StreamDatabase.Migrator\JOS.StreamDatabase.Migrator.csproj", "{8F9AF7BD-6F86-4CC4-9613-89D26BC620D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5FF02EFA-5A76-4235-BC6E-2F0E4279E5E3} = {B339848B-240C-4C33-A3E3-5A0240BA8117}
+		{707E871A-94D7-4A89-B977-19F0EDF30069} = {B339848B-240C-4C33-A3E3-5A0240BA8117}
+		{8F9AF7BD-6F86-4CC4-9613-89D26BC620D9} = {B339848B-240C-4C33-A3E3-5A0240BA8117}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FF02EFA-5A76-4235-BC6E-2F0E4279E5E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FF02EFA-5A76-4235-BC6E-2F0E4279E5E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FF02EFA-5A76-4235-BC6E-2F0E4279E5E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FF02EFA-5A76-4235-BC6E-2F0E4279E5E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{707E871A-94D7-4A89-B977-19F0EDF30069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{707E871A-94D7-4A89-B977-19F0EDF30069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{707E871A-94D7-4A89-B977-19F0EDF30069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{707E871A-94D7-4A89-B977-19F0EDF30069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F9AF7BD-6F86-4CC4-9613-89D26BC620D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F9AF7BD-6F86-4CC4-9613-89D26BC620D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F9AF7BD-6F86-4CC4-9613-89D26BC620D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F9AF7BD-6F86-4CC4-9613-89D26BC620D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

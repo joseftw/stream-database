@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "JOS.StreamDatabase.Migrator - migrate": {
+      "commandName": "Project",
+      "commandLineArgs": "migrate",
+      "environmentVariables": {
+        "Postgres__ConnectionString": "Host=localhost;Port=5432;Username=jos_stream_database;Password=power;Database=jos_stream_database;"
+      }
+    },
+    "JOS.StreamDatabase.Migrator - seed": {
+      "commandName": "Project",
+      "commandLineArgs": "seed",
+      "environmentVariables": {
+        "Postgres__ConnectionString": "Host=localhost;Port=5432;Username=jos_stream_database;Password=power;Database=jos_stream_database;"
+      }
+    }
+  }
+}
