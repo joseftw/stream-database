@@ -23,41 +23,48 @@ public class SeedDatabaseCommand
 
     public async Task Execute()
     {
-        var fileId = Guid.Parse("016b127e-d0d7-48a2-957f-774ffc004772");
-        var file = await _dbContext.RealEstateImages.FirstOrDefaultAsync(x => x.Id == fileId);
+        var realEstateId = Guid.Parse("d1ff5e47-12fe-4ff4-921e-c74c93b07739");
 
-        if(file is null)
+        if(await _dbContext.RealEstate.FirstOrDefaultAsync(x => x.Id == realEstateId) == null)
         {
-            var metadata = ImageMetadata.Create(112820,
-                new Dictionary<string, object>
-                {
-                    ["filename"] = "overstevagen.jpg", ["size"] = 112818, ["mimeType"] = "image/jpg"
-                });
+            var realEstateCreateResult = RealEstate.Create(realEstateId, "My house", []);
+            _dbContext.RealEstate.Add(realEstateCreateResult.Data);
+            await _dbContext.SaveChangesAsync();
+        }
 
-            if(metadata.Failed)
+        var files = new List<string> { "SeedData.overstevagen.jpg", "SeedData.11mb.jpg", };
+        var images = new List<RealEstateImage>();
+        foreach(var filename in files)
+        {
+            var cleanFilename = filename.Replace("SeedData.", string.Empty);
+            var existingImage =
+                await _dbContext.RealEstateImages.FirstOrDefaultAsync(x => x.Metadata.Filename == cleanFilename);
+
+            if(existingImage != null)
             {
-                throw new Exception($"Failed to create metadata for iamge. {metadata.Error.ErrorMessage}");
+                continue;
             }
 
-            var realEstateId = Guid.Parse("d1ff5e47-12fe-4ff4-921e-c74c93b07739");
-            var data = new EmbeddedResourceQuery().Read<SeedDatabaseCommand>("SeedData.overstevagen.jpg");
+            var fileId = Guid.CreateVersion7();
+            var data = new EmbeddedResourceQuery().Read<SeedDatabaseCommand>(filename);
+            var metadata = ImageMetadata.Create(
+                data.Length,
+                new Dictionary<string, object>
+                {
+                    ["filename"] = cleanFilename,
+                    ["size"] = data.Length,
+                    ["mimeType"] = "image/jpg"
+                });
             var imageFileCreateResult = RealEstateImage.Create(fileId, realEstateId, data, metadata.Data);
-
-
             if(imageFileCreateResult.Failed)
             {
                 throw new Exception($"Failed to create ImageFile. {imageFileCreateResult.Error.ErrorMessage}");
             }
-            var realEstateCreateResult = RealEstate.Create(realEstateId, "My house", [imageFileCreateResult.Data]);
 
-            if(realEstateCreateResult.Failed)
-            {
-                throw new Exception($"Failed to create RealEstate. {realEstateCreateResult.Error.ErrorMessage}");
-            }
-
-            _dbContext.RealEstate.Add(realEstateCreateResult.Data);
-            _dbContext.RealEstateImages.Add(imageFileCreateResult.Data);
-            await _dbContext.SaveChangesAsync();
+            images.Add(imageFileCreateResult.Data);
         }
+
+        _dbContext.RealEstateImages.AddRange(images);
+        await _dbContext.SaveChangesAsync();
     }
 }

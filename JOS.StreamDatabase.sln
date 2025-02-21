@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JOS.StreamDatabase.Database
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JOS.StreamDatabase.Migrator", "src\JOS.StreamDatabase.Migrator\JOS.StreamDatabase.Migrator.csproj", "{8F9AF7BD-6F86-4CC4-9613-89D26BC620D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JOS.ExampleWeb", "test\JOS.ExampleWeb\JOS.ExampleWeb.csproj", "{851C7766-4728-40CD-91A7-7875E1916638}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,7 @@ Global
 		{5FF02EFA-5A76-4235-BC6E-2F0E4279E5E3} = {B339848B-240C-4C33-A3E3-5A0240BA8117}
 		{707E871A-94D7-4A89-B977-19F0EDF30069} = {B339848B-240C-4C33-A3E3-5A0240BA8117}
 		{8F9AF7BD-6F86-4CC4-9613-89D26BC620D9} = {B339848B-240C-4C33-A3E3-5A0240BA8117}
+		{851C7766-4728-40CD-91A7-7875E1916638} = {C352DFAF-A981-4236-BE25-0A21021509D6}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5FF02EFA-5A76-4235-BC6E-2F0E4279E5E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -49,5 +52,9 @@ Global
 		{8F9AF7BD-6F86-4CC4-9613-89D26BC620D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F9AF7BD-6F86-4CC4-9613-89D26BC620D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F9AF7BD-6F86-4CC4-9613-89D26BC620D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{851C7766-4728-40CD-91A7-7875E1916638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851C7766-4728-40CD-91A7-7875E1916638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851C7766-4728-40CD-91A7-7875E1916638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851C7766-4728-40CD-91A7-7875E1916638}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
